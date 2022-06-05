@@ -19,6 +19,8 @@ if machine in ['i386', 'i686', 'x86_64']:
 elif machine in ['aarch64_be', 'aarch64', 'armv8b', 'armv8l']:
     sources.extend(['jit_compiler_a64_static.s', 'jit_compiler_a64.cpp'])
     compile_flags.append('-DHAVE_HWCAP')
+elif machine.startswith('ppc'):
+    compile_flags.append('-mcpu=native')
 sources = [os.path.join(source_root_dir,source) for source in sources]
 
 setup(
