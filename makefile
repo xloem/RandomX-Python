@@ -1,8 +1,11 @@
-twine_upload: update-version ensure-git
-	python3 setup.py clean
+upload: update-version clean ensure-git
 	python3 setup.py sdist
 	twine check dist/*
 	twine upload dist/*
+
+clean:
+	python3 setup.py clean
+	rm -rf dist build *.egg-info
     
 update-version:
 	-git submodule update --init --recursive
