@@ -1,3 +1,2 @@
 include version
-include randomx.pyx
-include crandomx.pxd
+global-include *.txt *.rst *.pyx *.pxd *.S *.c *.cpp *.inc *.h *.hpp

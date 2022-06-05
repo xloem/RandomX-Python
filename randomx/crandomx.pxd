@@ -1,4 +1,4 @@
-cdef extern from "RandomX/src/randomx.h":
+cdef extern from "randomx.h":
 
     ctypedef enum randomx_flags:
         RANDOMX_FLAG_DEFAULT

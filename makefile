@@ -1,11 +1,7 @@
-upload: clean update-version ensure-git
+upload: clean ensure-git
 	python3 setup.py sdist
 	twine check dist/*
 	twine upload dist/*
-
-clean:
-	python3 setup.py clean
-	rm -rf dist build *.egg-info
     
 update-version:
 	-git submodule update --init --recursive
@@ -18,6 +14,12 @@ update-version:
         popd &&\
         echo "$$version" | tee version
 	git add RandomX version
+	git commit -m "$$(<version)"
+	git tag "$$(<version)"
+
+clean:
+	python3 setup.py clean
+	rm -rf dist build *.egg-info
 
 ensure-git:
 	#cd test; pytest .. --rootdir=.
