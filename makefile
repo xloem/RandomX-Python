@@ -19,7 +19,7 @@ update-version:
 	git add RandomX version
 
 ensure-git:
-	cd test; pytest .. --rootdir=.
+	#cd test; pytest .. --rootdir=.
 	git update-index --refresh 
 	git diff-index --quiet HEAD --
 	git status
