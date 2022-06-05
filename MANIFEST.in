@@ -1,2 +1,3 @@
+include version
 include randomx.pyx
 include crandomx.pxd
