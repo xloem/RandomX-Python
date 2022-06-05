@@ -1,4 +1,4 @@
-upload: update-version clean ensure-git
+upload: clean update-version ensure-git
 	python3 setup.py sdist
 	twine check dist/*
 	twine upload dist/*
