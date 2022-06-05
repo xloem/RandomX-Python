@@ -26,8 +26,17 @@ sources = [os.path.join(source_root_dir,source) for source in sources]
 setup(
     name='RandomX',
     version=open('version').read(),
+    description='RandomX Proof-of-Work Hasher',
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     package_dir={'randomx': 'randomx'},
     packages=['randomx'],
+    url='https://github.com/xloem/RandomX-Python',
+    keywords=['randomx', 'crypto', 'cryptocurrency', 'blockchain', 'pow'],
+    classifiers=[
+      'Programming Language :: Python :: 3',
+      'Operating System :: OS Independent',
+    ],
     include_package_data=True,
     package_data={'': ['*.pyx', '*.pxd', '*.inc', '*.S', '*.h', '*.c', '*.hpp', '*.cpp']},
     ext_modules=cythonize(
