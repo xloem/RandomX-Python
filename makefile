@@ -1,4 +1,4 @@
-twine_upload: ensure-git update-version clean sdist bdist_wheel twine_check
+twine_upload: ensure-git update-version clean sdist twine_check #bdist_wheel
 
 help:
 	@echo 'Target name is simply passed to setup.py . make build, make install, make bdist_wheel ...'
