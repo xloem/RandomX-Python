@@ -1,11 +1,9 @@
-twine_upload: ensure-git update-version clean sdist twine_check #bdist_wheel
-
-help:
-	@echo 'Target name is simply passed to setup.py . make build, make install, make bdist_wheel ...'
-
-%:
-	python3 setup.py "$@"
-
+twine_upload: update-version ensure-git
+	python3 setup.py clean
+	python3 setup.py sdist
+	twine check dist/*
+	twine upload dist/*
+    
 update-version:
 	-git submodule update --init --recursive
 	pushd RandomX &&\

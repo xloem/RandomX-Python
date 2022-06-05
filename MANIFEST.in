@@ -1,0 +1,2 @@
+include randomx.pyx
+include crandomx.pxd
